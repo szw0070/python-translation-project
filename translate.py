@@ -98,7 +98,16 @@ def get_complement(sequence):
     """
     sequence = sequence.upper()
     print("\n\n sequence: " + sequence)
-    conversion_dict = {
+    trans_table = str.maketrans('GCTA','CGAU')
+    complement = str.translate(sequence,trans_table)
+    print("complement: " + complement)
+    return(complement)
+    if (sequence != ''):
+        return(complement)
+    else:
+        return ''
+
+    """ conversion_dict = {
         "A" : "U",
         "U" : "A",
         "G" : "C",
@@ -113,7 +122,7 @@ def get_complement(sequence):
         complement = None
     return complement
     print("complement: " + complement)
-    """if (sequence != ''):
+    if (sequence != ''):
         return(sequence)
     else:
         return ''
