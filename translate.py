@@ -98,7 +98,7 @@ def get_complement(sequence):
     """
     sequence = sequence.upper()
     print("\n\n sequence: " + sequence)
-    trans_table = str.maketrans('GCTA','CGAU')
+    trans_table = str.maketrans('GCUA','CGAU')
     complement = str.translate(sequence,trans_table)
     print("complement: " + complement)
     return(complement)
