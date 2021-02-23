@@ -96,14 +96,28 @@ def get_complement(sequence):
     >>> get_complement('AUGC')
     'UACG'
     """
-    print("\n\n sequence: " + sequence)
     sequence = sequence.upper()
-    print("complement: " + sequence)
-    if (sequence != ''):
+    print("\n\n sequence: " + sequence)
+    conversion_dict = {
+        "A" : "U",
+        "U" : "A",
+        "G" : "C",
+        "C" : "G"
+        }
+    complement = ""
+    for base in sequence:
+        if base in conversion_dict:
+            complement += conversion_dict[base]
+    else:
+        return ''
+        complement = None
+    return complement
+    print("complement: " + complement)
+    """if (sequence != ''):
         return(sequence)
     else:
         return ''
-
+    """
 
 def reverse_and_complement(sequence):
     """Get the reversed and complemented form of a `sequence` of nucleotides.
