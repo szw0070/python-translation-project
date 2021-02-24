@@ -28,8 +28,14 @@ def translate_sequence(rna_sequence, genetic_code):
     str
         A string of the translated amino acids.
     """
-    pass
-
+    print("\n\n rna sequence: " + rna_sequence)
+    """if (rna_sequence > bases)
+        return ''
+    """
+    if (codon == '*'):
+        return ''
+    else:
+        return rna_sequence
 def get_all_translations(rna_sequence, genetic_code):
     """Get a list of all amino acid sequences encoded by an RNA sequence.
 
