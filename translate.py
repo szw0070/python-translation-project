@@ -2,6 +2,11 @@
 
 import sys
 
+def pop_next_codon(sequence):
+    codon = sequence[0:3]
+    remaining_seq = sequence[3:]
+    return codon, remaining_seq
+
 def translate_sequence(rna_sequence, genetic_code):
     """Translates a sequence of RNA into a sequence of amino acids.
 
@@ -31,9 +36,9 @@ def translate_sequence(rna_sequence, genetic_code):
     rna_sequence = rna_sequence.upper()
     amino_acid_list = []
     while True:
-        if len(rna_sequence < 3:
+        if len(rna_sequence) < 3:
             break
-        codon, remain_seq = pop_next_codon(rna_sequence)
+        codon, remaining_seq = pop_next_codon(rna_sequence)
         rna_sequence = remaining_seq
         aa = genetic_code[codon]
         if aa == "*":
